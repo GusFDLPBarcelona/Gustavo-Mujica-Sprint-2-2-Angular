@@ -8,7 +8,11 @@ var products = [
         id: 1,
         name: 'cooking oil',
         price: 10.5,
-        type: 'grocery',       
+        type: 'grocery',
+        offer: {
+            number: 3,
+            percent: 20
+        }
     },
     {
         id: 2,
@@ -21,6 +25,10 @@ var products = [
         name: 'Instant cupcake mixture',
         price: 5,
         type: 'grocery',
+        offer: {
+            number: 10,
+            percent: 30
+        }
     },
     {
         id: 4,
@@ -80,7 +88,7 @@ function buy(product, quantity = 1) {
 // Nivel 1 - Ejercicio 2
 // Función para vaciar el carrito
 
-function emptyCart() {
+function clearCart() {
     cart = []; 
     console.log("¡El carrito está vacío!");
 }
@@ -95,5 +103,21 @@ function calculateTotal() {
         total += producte.price * producte.cantidad;
     }
     return total;
+}
+
+// Nivel 1 - Ejercicio 4
+// Función para aplicar descuentos
+
+function applyPromotionsCart(cart) {
+    cart.forEach(product => {
+        let productTotalPrice = product.price * product.quantity;
+
+        if (product.offer && product.quantity >= product.offer.number) {
+            let discountAmount = productTotalPrice * (product.offer.percent / 100);
+            product.subtotalWithDiscount = productTotalPrice - discountAmount;
+        } else {
+            product.subtotalWithDiscount = productTotalPrice;
+        }
+    });
 }
 
