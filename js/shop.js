@@ -81,6 +81,19 @@ function buy(product, quantity = 1) {
 // Función para vaciar el carrito
 
 function emptyCart() {
-    cart = []; // Vaciamos el arreglo cart
+    cart = []; 
     console.log("¡El carrito está vacío!");
 }
+// Nivel 1 - Ejercicio 3
+// Función para calcular el importe de la compra
+
+function calculateTotal() {
+    let total = 0;
+
+    for(let i= 0 ; i < cart.length; i ++) {
+        const producte = cart[i] ; 
+        total += producte.price * producte.cantidad;
+    }
+    return total;
+}
+
