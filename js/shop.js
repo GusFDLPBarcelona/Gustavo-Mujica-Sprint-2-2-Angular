@@ -77,7 +77,10 @@ function buy(product, quantity = 1) {
     }
 }
 
+// Nivel 1 - Ejercicio 2
+// Función para vaciar el carrito
 
-
-
-
+function emptyCart() {
+    cart = []; // Vaciamos el arreglo cart
+    console.log("¡El carrito está vacío!");
+}
