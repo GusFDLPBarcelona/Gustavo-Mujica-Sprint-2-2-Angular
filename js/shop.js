@@ -1,18 +1,10 @@
-
-// Sprint 2.2 - E-commerce
-// Nivel 1- Ejercicio 1
-// Crear el array de productos y la función para agregar esos productos al carrito.
-
+// If you have time, you can move this variable "products" to a json or js file and load the data in this js. It will look more professional
 var products = [
     {
         id: 1,
         name: 'cooking oil',
         price: 10.5,
-        type: 'grocery',
-        offer: {
-            number: 3,
-            percent: 20
-        }
+        type: 'grocery',       
     },
     {
         id: 2,
@@ -25,10 +17,6 @@ var products = [
         name: 'Instant cupcake mixture',
         price: 5,
         type: 'grocery',
-        offer: {
-            number: 10,
-            percent: 30
-        }
     },
     {
         id: 4,
@@ -68,56 +56,93 @@ var products = [
     }
 ]
 
-let cart = [];
-let total = 0;
+//Sprint 2.2 - E-commerce
+// Nivel 1- Ejercicio 1
+// Crear el array de productos y la función para agregar esos productos al carrito.
 
-function buy(product, quantity = 1) {
-    if (cart.includes(product)) {
-        cart.forEach(item => {
-            if (item.product === product) {
-                    item.quantity += quantity;
-            }
-        });
-        console.log(`¡Se añadieron ${quantity} ${product}(s) más al carrito!`);
+let cart = [];      
+let count = 0;      
+
+//Función para agregar productos al carrito que comprueba si el producto ya está en el carrito. Añade o suma 1 a la cantidad de productos.
+
+function buy(id) {
+    
+    var product = products.find(product => product.id === id);    
+    if (product) {        
+        var cartItem = cart.find(item => item.id === id);        
+        if (cartItem) {  
+            cartItem.quantity++;  
+            console.log(`Se añadió 1 ${product.name} más al carrito. Total: ${cartItem.quantity}`);
+        } else {  
+            
+            cart.push({...product, quantity: 1});
+            console.log(`Producto ${product.name} añadido al carrito.`);
+        }        
+        count++;
+        document.getElementById('cart').innerHTML = count;
     } else {
-            cart.push({ product: product, quantity: quantity });
-        console.log(`¡Se añadieron ${quantity} ${product}(s) al carrito!`);
+        console.log('Producto no encontrado.');
     }
 }
 
-// Nivel 1 - Ejercicio 2
-// Función para vaciar el carrito
+// Buscar el producto por su ID
+// Buscar el producto en el carrito
+// Si el producto ya está en el carrito incrementar la cantidad en 1
+// Si el producto no está en el carrito agregar el producto al carrito con una cantidad inicial de 1
+// Actualizar el contador en el HTML
 
-function clearCart() {
-    cart = []; 
-    console.log("¡El carrito está vacío!");
+
+// Nivel 1- Ejercicio 2
+// Función para vaciar el carrito de la compra y devolver un mensaje de confirmación.
+
+function cleanCart() {    
+    var confirmacion = confirm('¿Estás seguro de que deseas vaciar el carrito de compras?');    
+    if (confirmacion) {  
+        cart = [];  
+        count = 0;  
+        document.getElementById('cart').innerHTML = count;  
+        console.log('Carrito de compras vaciado.');
+    } else {
+        console.log('Operación de vaciado cancelada.');
+    }
 }
-// Nivel 1 - Ejercicio 3
-// Función para calcular el importe de la compra
+
+// Mostrar una ventana de confirmación al usuario
+// Si el usuario confirma
+// Vaciar el array del carrito
+// Reiniciar el contador de productos en el carrito
+// Actualizar el contador en la interfaz de usuario
+
+
+// Nivel 1- Ejercicio 3
+// Función para calcular el total de la compra a partir del carrito.
 
 function calculateTotal() {
-    let total = 0;
-
-    for(let i= 0 ; i < cart.length; i ++) {
-        const producte = cart[i] ; 
-        total += producte.price * producte.cantidad;
-    }
-    return total;
-}
-
-// Nivel 1 - Ejercicio 4
-// Función para aplicar descuentos
-
-function applyPromotionsCart(cart) {
-    cart.forEach(product => {
-        let productTotalPrice = product.price * product.quantity;
-
-        if (product.offer && product.quantity >= product.offer.number) {
-            let discountAmount = productTotalPrice * (product.offer.percent / 100);
-            product.subtotalWithDiscount = productTotalPrice - discountAmount;
-        } else {
-            product.subtotalWithDiscount = productTotalPrice;
-        }
+    var total = 0;    
+    cart.forEach(item => {        
+        total += item.price * item.quantity;
     });
+    
+    return total;  
 }
+
+// Inicializar el total a 0
+// Recorrer todos los productos en el carrito
+// Multiplicar el precio del producto por su cantidad y sumarlo al total
+// Devolver el total calculado
+
+
+// Nivel 1- Ejercicio 4
+// Función para aplicar los descuentos de las promociones.
+
+cart.forEach(product => {
+    let productTotalPrice = product.price * product.quantity;
+
+    if (product.offer && product.quantity >= product.offer.number) {
+        let discountAmount = productTotalPrice * (product.offer.percent / 100);
+        product.subtotalWithDiscount = productTotalPrice - discountAmount;
+    } else {
+        product.subtotalWithDiscount = productTotalPrice;
+    }
+});
 
