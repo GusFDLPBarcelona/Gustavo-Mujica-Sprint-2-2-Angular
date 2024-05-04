@@ -135,14 +135,25 @@ function calculateTotal() {
 // Nivel 1- Ejercicio 4
 // Función para aplicar los descuentos de las promociones.
 
-cart.forEach(product => {
-    let productTotalPrice = product.price * product.quantity;
+function applyPromotionsCart(cart) {
+    cart.forEach(product => {
+        let productTotalPrice = product.price * product.quantity;        
+        if (product.type === 'grocery' && product.quantity >= 3) {
+            let discountAmount = productTotalPrice * (20 / 100);
+            product.subtotalWithDiscount = productTotalPrice - discountAmount;
+        }         
+        else if (product.name === 'Instant cupcake mixture' && product.quantity >= 10) {
+            let discountAmount = productTotalPrice * (30 / 100);
+            product.subtotalWithDiscount = productTotalPrice - discountAmount;        }        
+        else {
+            product.subtotalWithDiscount = productTotalPrice;
+        }
+    });
+}
 
-    if (product.offer && product.quantity >= product.offer.number) {
-        let discountAmount = productTotalPrice * (product.offer.percent / 100);
-        product.subtotalWithDiscount = productTotalPrice - discountAmount;
-    } else {
-        product.subtotalWithDiscount = productTotalPrice;
-    }
-});
+// Promoción 1: Si el usuario compra 3 o más botellas de aceite, el precio del producto se rebaja un 20%.
+// Promoción 2: Cuando se compran 10 o más productos para hacer tartas, el precio del producto se rebaja un 30%.
+// No se aplica ninguna promoción.
+
+
 
