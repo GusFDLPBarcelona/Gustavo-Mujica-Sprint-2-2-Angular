@@ -11,34 +11,45 @@
 // Si todos los campos son válidos, el formulario puede enviarse. Si no, se detendrá el envío del formulario.
 
 function validate() {
-    let error = 0;
+    let error = 0; // Variable para contar errores.
    
-    let fName = document.getElementById("fName");
+    // obtener el valor del campo de datos y asignamos a variables.      
+    let fName = document.getElementById("fName");     
     let fLastN = document.getElementById("fLastN");
     let fEmail = document.getElementById("fEmail");
     let fPassword = document.getElementById("fPassword");
     let fAddress = document.getElementById("fAddress");
     let fPhone = document.getElementById("fPhone");
     
-    let errorName = document.getElementById("errorName");
+
+    // obtener el valor de error y asignamos a variables.
+    let errorName = document.getElementById("errorName"); 
     let errorLastN = document.getElementById("errorLastN");
     let errorEmail = document.getElementById("errorEmail");
     let errorPassword = document.getElementById("errorPassword");
     let errorAddress = document.getElementById("errorAddress");
     let errorPhone = document.getElementById("errorPhone");
     
-    let fNameValue = fName.value.trim();
+    // Quitamos lo signos de espacio en blanco de los valores de los campos.
+    // el valor resultante se asigna a una nueva variable.
+    let fNameValue = fName.value.trim();   
     let fLastNValue = fLastN.value.trim();
     let fEmailValue = fEmail.value.trim();
     let fPasswordValue = fPassword.value.trim();
     let fAddressValue = fAddress.value.trim();
     let fPhoneValue = fPhone.value.trim();
 	
-    let letterRegex = /^[A-Za-z]+$/;
-    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    let passwordRegex = /(?=.*[a-zA-Z])(?=.*[0-9])/;
-    let addressRegex = /^[a-zA-Z0-9\s/,-]+$/;
-    let numberRegex = /^\d+$/;
+    // Expresiones regulares para validar los campos y asignarlos a variables.
+
+    let letterRegex = /^[A-Za-z]+$/;   // Expresión regular para validar solo letras.
+    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Expresión regular para validar un email.
+    let passwordRegex = /(?=.*[a-zA-Z])(?=.*[0-9])/; // Expresión regular para validar una contraseña.
+    let addressRegex = /^[a-zA-Z0-9\s/,-]+$/; // Expresión regular para validar una dirección.
+    let numberRegex = /^\d+$/; // Expresión regular para validar un número.
+
+    // El resto del código vañida los campos del formulario con las expresiones regulares y 
+    //muestra los mensajes de error si es necesario, verifica que se cumplan las condiciones de
+    //validación y, si cualquiera de ellas no se cumple, evita el envío.
 
     let isValid = true;	
     
