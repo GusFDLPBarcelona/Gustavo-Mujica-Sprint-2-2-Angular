@@ -164,6 +164,7 @@ function printCart() {
         	<th scope="row">${element.name}</th>
 			<td>${element.price}</td>
 			<td>${element.quantity}</td>
+            <td>${(element.price * element.quantity).toFixed(2)}</td> 
 			<td>${element.subtotalWithDiscount}</td>
         `
         cartList.appendChild(content)

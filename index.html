@@ -269,6 +269,7 @@
 								<th scope="col">Product</th>
 								<th scope="col">Price</th>
 								<th scope="col">Qty.</th>
+								<th scope="col">Total</th>
 								<th scope="col">Total <small>(with discount)</small></th>
 							</tr>
 						</thead>
@@ -295,6 +296,7 @@
                             <th scope="row">${element.name}</th>
                             <td>${element.price}</td>
                             <td>${element.quantity}</td>
+							<td>${(element.subtotalWithDiscount * element.quantity).toFixed(2)}</td>
                             <td>${element.subtotalWithDiscount.toFixed(2)}</td>
                             </tr>
 						</tbody>
