@@ -183,11 +183,22 @@ function printCart() {
 // Ejercicio 7
 // La función removeFromCart(id) elimina un producto del carrito. Busca el producto con el id especificado en el carrito.
 // Si lo encuentra, lo elimina del carrito.
+// Si la cantidad de productos es mayor a 1, disminuye la cantidad en 1. Si la cantidad es 1, elimina el producto del carrito.
+// Si el usuario elimina un producto del carrito, actualiza la cantidad de productos en el carrito.
 
 function removeFromCart(id) {
-
+    const index = cart.findIndex(item => item.id === id);
+    if (index !== -1) {
+        if (cart[index].quantity > 1) {
+            cart[index].quantity--;
+        } else {
+            cart.splice(index, 1);
+        }
+        const totalProducts = cart.reduce((total, item) => total + item.quantity, 0);
+        document.getElementById('cart_list').textContent = totalProducts;
+        printCart();
+    }
 }
-
 // función para abrir el modal. abre el modal y muestra el contenido del carrito de compras con los precios y descuentos.
 
 function open_modal() {
