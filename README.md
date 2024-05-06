@@ -13,8 +13,57 @@ Las funciones principales: comprar
                            calcular el total
                            implementar promociones con características específicas
                            
-Luego se implementan los métodos para mostrar la compra, quitar artículos, vaciar el carrito y finalmente el formulario de validación de datos de cliente en la página de salida de la compra (checkout).
+Luego se aplican métodos a las funciones para mostrar la compra, quitar artículos, vaciar el carrito y finalmente el formulario de validación de datos de cliente en la página de salida de la compra (checkout).
 
 Para ver el funcionamiento clonar el repositorio y hacer 'Click' en el archivo "index.html"
 
+Una breve explicación de las lógicas implementadas en JavaScript acorde con el enunciado del proyecto y los ejercicios:
 
+ Nivel 1 
+
+ Ejercicio 1
+
+ La función buy(id) busca un producto con un id específico. Si lo encuentra, verifica si ya está en el carrito. Si es así,
+ aumenta su cantidad.Si no, lo agrega al carrito con una cantidad de 1.
+
+ Ejercicio 2
+
+ La función cleanCart() vacía el carrito. Pregunta al usuario si está seguro de que desea vaciar el carrito.
+ Si el usuario confirma, el carrito se vacía.
+
+ Ejercicio 3
+
+ La función calculateTotal() suma los subtotales de todos los productos en el carrito para obtener el precio total. 
+ Recorre cada producto en el carrito, agrega su subtotal con descuento al precio total y luego devuelve ese total.
+
+ Ejercicio 4
+
+ La función applyPromotionsCart() aplica promociones a cada producto en el array "cart".
+ Recorre cada producto en el carrito y calcula el precio total del producto. Si el producto tiene una oferta,
+ verifica si la cantidad de productos es mayor o igual al número de productos requeridos para la oferta. Si es así,
+ calcula el precio total del producto con descuento y lo guarda en el campo "subtotalWithDiscount" del producto.
+ Si no, guarda el precio total del producto en el campo "subtotalWithDiscount" del producto.
+
+ Ejercicio 5
+
+ la función printCart() llena el modal del carrito de compras manipulando el dom del carrito de compras.
+ Recorre cada producto en el carrito y agrega su nombre, precio, cantidad y subtotal con descuento al modal del carrito.
+ Luego, calcula el precio total del carrito y lo muestra en el modal del carrito.
+ Finalmente, muestra la cantidad de productos en el carrito.
+
+
+ Nivel 2
+
+ Ejercicio 7
+ La función removeFromCart(id) elimina un producto del carrito. Busca el producto con el id especificado en el carrito.
+ Si lo encuentra, lo elimina del carrito.
+ Si la cantidad de productos es mayor a 1, disminuye la cantidad en 1. Si la cantidad es 1, elimina el producto del carrito.
+ Si el usuario elimina un producto del carrito, actualiza la cantidad de productos en el carrito.
+ función para abrir el modal. abre el modal y muestra el contenido del carrito de compras con los precios y descuentos.
+
+
+ Nivel 3 
+
+ Ejercicio 8
+
+ Dotar al proyecto de una apariencia más profecional mediante estilos de CSS.
