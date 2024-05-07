@@ -67,3 +67,23 @@ Una breve explicación de las lógicas implementadas en JavaScript acorde con el
  Ejercicio 8
 
  Dotar al proyecto de una apariencia más profecional mediante estilos de CSS.
+
+body {
+    background-color: #f5f5dc; 
+    color: #333; 
+}
+
+
+.btn {
+    background-color: #ffd700; 
+    color: #333; 
+    border-radius: 20px; 
+    transition: all 0.3s ease;
+}
+
+
+.btn:hover {
+    background-color: #eec900; 
+}
+
+Nota: Al momento de la entrega experimenté problemas de Bootstrap en un paquete de js.delivery que no puede resolver aún.
