@@ -150,7 +150,7 @@ function printCart() {
     });
 
     let showTotal = document.getElementById('total_price');
-    showTotal.innerHTML = `$${totalPrice.toFixed(2)}`;
+    showTotal.innerHTML = `${totalPrice.toFixed(2)}`;
 
     let countProduct = document.getElementById('count_product');
     let countProductInCart = cart.reduce((total, product) => total + product.quantity, 0);

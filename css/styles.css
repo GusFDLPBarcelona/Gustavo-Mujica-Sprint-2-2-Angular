@@ -181,7 +181,9 @@
   --bs-form-invalid-border-color: #ea868f;
 }
 
-
+.total-with-discount {
+    width: 200px; /* Ancho específico para la celda "Total (with discount)" */
+}
 
 .bg-light {
   background-color: var(--bs-light) !important;
