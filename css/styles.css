@@ -181,6 +181,11 @@
   --bs-form-invalid-border-color: #ea868f;
 }
 
+.bg-light {
+  background-color: var(--bs-light);
+
+}
+
 *,
 *::before,
 *::after {
@@ -11856,14 +11861,14 @@ body {
 
 
 .btn {
-    background-color: #ffd700; 
+    background-color: #ffffff; 
     color: #333; 
-    border-radius: 20px; 
+    border-radius: 5px; 
     transition: all 0.3s ease;
 }
 
 
 .btn:hover {
-    background-color: #eec900; 
+    background-color: #fffbe4; 
 }
 /*# sourceMappingURL=styles.css.map */
