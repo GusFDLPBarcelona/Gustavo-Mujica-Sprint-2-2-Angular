@@ -181,6 +181,7 @@
   --bs-form-invalid-border-color: #ea868f;
 }
 
+
 .bg-light {
   background-color: var(--bs-light);
 
@@ -11853,22 +11854,5 @@ textarea.form-control-lg {
   }
 }
 
-body {
 
-    background-color: #f5f5dc !important; 
-    color: #333 !important;
-}
-
-
-.btn {
-    background-color: #ffffff; 
-    color: #333; 
-    border-radius: 5px; 
-    transition: all 0.3s ease;
-}
-
-
-.btn:hover {
-    background-color: #fffbe4; 
-}
 /*# sourceMappingURL=styles.css.map */
