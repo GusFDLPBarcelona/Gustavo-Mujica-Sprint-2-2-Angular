@@ -181,9 +181,21 @@
   --bs-form-invalid-border-color: #ea868f;
 }
 
-.total-with-discount {
-    width: 200px; /* Ancho específico para la celda "Total (with discount)" */
+.modal { 
+  width: 75% !important;
 }
+.modal-content {
+    min-width: 500px !important; 
+}
+
+.table th,
+.table td {
+    max-width: 500px !important; 
+    word-wrap: break-word !important;    
+    display: table-cell !important;
+    vertical-align: inherit !important;
+    font-weight: inherit !important;
+  }
 
 .bg-light {
   background-color: var(--bs-light) !important;
