@@ -53,28 +53,31 @@ Una breve explicación de las lógicas implementadas en JavaScript acorde con el
 
  Ejercicio 6
 
- Función de validación de formulario
+ Función de validación de formulario.
+
  La función validate() se encarga de validar los campos del formulario de registro.
+
  Entonces primero se obtienen los valores de los campos del formulario como nombre, apellido, e-mail, etc..
+
  Luego, verifica cada campo con ciertas reglas. Por ejemplo, el nombre y el apellido deben tener al menos 3 caracteres y solo
- pueden contener letras. El email debe ser un email válido.La contraseña debe tener entre 4 y 8 caracteres y contener al
- menos una letra y un número. La dirección debe tener al menos 3 caracteres y puede contener letras, números y ciertos
- caracteres especiales. El teléfono debe tener exactamente 9 dígitos.
+ pueden contener letras. 
+ El email debe ser un email válido. 
+ La contraseña debe tener entre 4 y 8 caracteres y contener al  menos una letra y un número. 
+ La dirección debe tener al menos 3 caracteres y puede contener letras, números y ciertos  caracteres especiales (@). 
+ El teléfono debe tener exactamente 9 dígitos.
  Si todos los campos son válidos, el formulario puede enviarse. Si no, se detendrá el envío del formulario.
  Variable para contar errores.
- obtener el valor del campo de datos y asignamos a variables. 
- obtener el valor de error y asignamos a variables.
- Quitamos lo signos de espacio en blanco de los valores de los campos,
- el valor resultante se asigna a una nueva variable.
+ Obtener el valor del campo de datos y asignamos a variables. 
+ Obtener el valor de error y asignamos a variables.
+ Quitamos lo signos de espacio en blanco de los valores de los campos, el valor resultante se asigna a una nueva variable.
  Expresiones regulares para validar los campos y asignarlos a variables.
  Expresión regular para validar solo letras.
  Expresión regular para validar un email.
  Expresión regular para validar una contraseña. Solo acepta letras y num.
  Expresión regular para validar una dirección.
  Expresión regular para validar un número.
- El resto del código valida los campos del formulario con las expresiones regulares y 
- muestra los mensajes de error si es necesario, verifica que se cumplan las condiciones de
- validación y, si cualquiera de ellas no se cumple, evita el envío.
+ El resto del código valida los campos del formulario con las expresiones regulares y  muestra los mensajes de error. 
+ Si es necesario, verifica que se cumplan las condiciones de  validación y, si cualquiera de ellas no se cumple, evita el envío.
 
 
  Nivel 2
