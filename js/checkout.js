@@ -1,8 +1,5 @@
-
-
 function validate() {
-    let error = 0; 
-   
+    let error = 0;   
         
     let fName = document.getElementById("fName");     
     let fLastN = document.getElementById("fLastN");
@@ -10,33 +7,26 @@ function validate() {
     let fPassword = document.getElementById("fPassword");
     let fAddress = document.getElementById("fAddress");
     let fPhone = document.getElementById("fPhone");
-    
-
    
     let errorName = document.getElementById("errorName"); 
     let errorLastN = document.getElementById("errorLastN");
     let errorEmail = document.getElementById("errorEmail");
     let errorPassword = document.getElementById("errorPassword");
     let errorAddress = document.getElementById("errorAddress");
-    let errorPhone = document.getElementById("errorPhone");
-    
+    let errorPhone = document.getElementById("errorPhone");   
    
     let fNameValue = fName.value.trim();   
     let fLastNValue = fLastN.value.trim();
     let fEmailValue = fEmail.value.trim();
     let fPasswordValue = fPassword.value.trim();
     let fAddressValue = fAddress.value.trim();
-    let fPhoneValue = fPhone.value.trim();
-	
-  
+    let fPhoneValue = fPhone.value.trim();  
 
     let letterRegex = /^[A-Za-z]+$/;   
     let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
     let passwordRegex = /(?=.*[a-zA-Z])(?=.*[0-9])/; 
     let addressRegex = /^[a-zA-Z0-9\s/,-]+$/; 
-    let numberRegex = /^\d+$/; 
-
-    
+    let numberRegex = /^\d+$/;     
 
     let isValid = true;	
     
