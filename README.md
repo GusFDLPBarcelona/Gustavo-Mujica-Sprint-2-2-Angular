@@ -2,16 +2,17 @@
 Funciones para E-commerce
 
 En los ejercicios que componen este Sprint profundizamos en los conocimientos adquiridos de JavaScript, comenzamos a integrar todos los Sprint ateriores y ponemos en práctica lo aprendido. 
-En este ejercicio creamos lógica para las funciones de compra en un E-commerce. 
+El Sprint demanda que creemos la lógica para las funciones de compra en un E-commerce. 
 
-Se trata de un primer acercamiento al encargo de un cliente para montar una verción demo de la getión de un carrito de la compra, tratamiento de productos con descuento y validación de un formulario con los datos que ingresan los usuarios. 
+Se trata de un primer acercamiento al encargo de un cliente para montar una versión demo de la getión de un carrito de la compra, tratamiento de productos con descuento y validación de un formulario con los datos que ingresan los usuarios. 
 
-A través de los 8 niveles desarrollamos las funciones necesarias para tomar los datos, procesarlos, permitir al usuario tener el control de las operaciones de compra, vaciado del carrito, acceso a los productos y entrada y validación de datos como cliente. 
+A través de los 8 ejercicios divididos en tres niveles desarrollamos las funciones necesarias para tomar los datos, procesarlos, permitir al usuario tener el control de las operaciones de compra, vaciado del carrito, acceso a los productos y entrada y validación de datos como cliente. 
 
 Las funciones principales: comprar
                            vaciar el carrito
                            calcular el total
                            implementar promociones con características específicas
+                           mostrar los detalles de la compra que se eswtá realizando
                            
 Luego se aplican métodos a las funciones para mostrar la compra, quitar artículos, vaciar el carrito y finalmente el formulario de validación de datos de cliente en la página de salida de la compra (checkout).
 
@@ -24,7 +25,7 @@ Una breve explicación de las lógicas implementadas en JavaScript acorde con el
  Ejercicio 1
 
  La función buy(id) busca un producto con un id específico. Si lo encuentra, verifica si ya está en el carrito. Si es así,
- aumenta su cantidad.Si no, lo agrega al carrito con una cantidad de 1.
+ aumenta su cantidad. Si no, lo agrega al carrito con una cantidad de 1.
 
  Ejercicio 2
 
@@ -34,7 +35,7 @@ Una breve explicación de las lógicas implementadas en JavaScript acorde con el
  Ejercicio 3
 
  La función calculateTotal() suma los subtotales de todos los productos en el carrito para obtener el precio total. 
- Recorre cada producto en el carrito, agrega su subtotal con descuento al precio total y luego devuelve ese total.
+ Recorre cada producto en el carrito, aplica a los productos que están en oferta un descuento que resta al precio total y luego devuelve ese total.
 
  Ejercicio 4
 
@@ -87,7 +88,7 @@ Una breve explicación de las lógicas implementadas en JavaScript acorde con el
  Si lo encuentra, lo elimina del carrito.
  Si la cantidad de productos es mayor a 1, disminuye la cantidad en 1. Si la cantidad es 1, elimina el producto del carrito.
  Si el usuario elimina un producto del carrito, actualiza la cantidad de productos en el carrito.
- función para abrir el modal. abre el modal y muestra el contenido del carrito de compras con los precios y descuentos.
+ función para abrir el modal. Abre el modal y muestra el contenido del carrito de compras con los precios y descuentos.
 
 
  Nivel 3 
