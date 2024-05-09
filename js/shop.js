@@ -147,7 +147,9 @@ function printCart() {
             </td>
         `;
         cartList.appendChild(content);
-    });
+        applyPromotionsCart();
+    
+});
 
     let showTotal = document.getElementById('total_price');
     showTotal.innerHTML = `${totalPrice.toFixed(2)}`;
@@ -168,9 +170,11 @@ function removeFromCart(id) {
             cart.splice(index, 1);
         }
         printCart();
+        calculateTotal();
     }
-}
 
+
+}
 function open_modal() {
     printCart();
 }
