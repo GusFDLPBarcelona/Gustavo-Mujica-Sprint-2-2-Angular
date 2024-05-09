@@ -181,12 +181,6 @@
   --bs-form-invalid-border-color: #ea868f;
 }
 
-.modal { 
-  width: 75% !important;
-}
-.modal-content {
-    min-width: 500px !important; 
-}
 
 .table th,
 .table td {
