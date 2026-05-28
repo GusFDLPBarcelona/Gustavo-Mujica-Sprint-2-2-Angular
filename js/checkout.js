@@ -85,5 +85,4 @@ function validate(event) {
         fPhone.classList.remove("is-invalid");
     }
 
-    onclick.preventDefault()
 }

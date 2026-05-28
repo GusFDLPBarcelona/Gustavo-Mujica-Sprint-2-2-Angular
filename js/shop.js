@@ -134,8 +134,8 @@ function printCart() {
     cart.forEach(element => {
         let content = document.createElement('tr');
         let subtotal = (element.price * element.quantity).toFixed(2);
-        totalPrice += parseFloat(subtotal);
-        
+        totalPrice += element.subtotalWithDiscount;
+
         content.innerHTML = `
             <th scope="row">${element.name}</th>
             <td>$${element.price.toFixed(2)}</td>
@@ -147,12 +147,10 @@ function printCart() {
             </td>
         `;
         cartList.appendChild(content);
-        applyPromotionsCart();
-    
-});
+    });
 
     let showTotal = document.getElementById('total_price');
-    showTotal.innerHTML = `${totalPrice.toFixed(2)}`;
+    showTotal.innerHTML = totalPrice.toFixed(2);
 
     let countProduct = document.getElementById('count_product');
     let countProductInCart = cart.reduce((total, product) => total + product.quantity, 0);

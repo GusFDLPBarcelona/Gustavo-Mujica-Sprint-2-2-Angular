@@ -1,118 +1,61 @@
-# Gustavo-Mujica-Sprint-2-2-Angular
-Funciones para E-commerce
+# Sprint 2.2 — ShopNow E-commerce
 
-En los ejercicios que componen este Sprint profundizamos en los conocimientos adquiridos de JavaScript, comenzamos a integrar todos los Sprint ateriores y ponemos en práctica lo aprendido. 
-El Sprint demanda que creemos la lógica para las funciones de compra en un E-commerce. 
+Demo funcional de una tienda online con carrito de compra, sistema de descuentos por volumen y formulario de checkout con validación completa.
 
-Se trata de un primer acercamiento al encargo de un cliente para montar una versión demo de la getión de un carrito de la compra, tratamiento de productos con descuento y validación de un formulario con los datos que ingresan los usuarios. 
+## Funcionalidades
 
-A través de los 8 ejercicios divididos en tres niveles desarrollamos las funciones necesarias para tomar los datos, procesarlos, permitir al usuario tener el control de las operaciones de compra, vaciado del carrito, acceso a los productos y entrada y validación de datos como cliente. 
+| # | Función | Descripción |
+|---|---------|-------------|
+| 1 | `buy(id)` | Añade producto al carrito; incrementa cantidad si ya existe |
+| 2 | `cleanCart()` | Vacía el carrito con confirmación del usuario |
+| 3 | `calculateTotal()` | Suma los subtotales con descuento de todos los productos |
+| 4 | `applyPromotionsCart()` | Aplica descuentos por volumen según reglas por producto |
+| 5 | `printCart()` | Renderiza el carrito en el modal con precios y descuentos |
+| 6 | `removeFromCart(id)` | Reduce la cantidad o elimina el producto del carrito |
+| 7 | `validate(event)` | Valida el formulario de checkout con expresiones regulares |
 
-Las funciones principales: comprar
-                           vaciar el carrito
-                           calcular el total
-                           implementar promociones con características específicas
-                           mostrar los detalles de la compra que se eswtá realizando
-                           
-Luego se aplican métodos a las funciones para mostrar la compra, quitar artículos, vaciar el carrito y finalmente el formulario de validación de datos de cliente en la página de salida de la compra (checkout).
+## Descuentos por volumen
 
-Para ver el funcionamiento clonar el repositorio y hacer 'Click' en el archivo "index.html"
+| Producto | Cantidad mínima | Descuento |
+|----------|----------------|-----------|
+| Cooking Oil | 3 unidades | 20% |
+| Instant Cupcake Mixture | 10 unidades | 30% |
 
-Una breve explicación de las lógicas implementadas en JavaScript acorde con el enunciado del proyecto y los ejercicios:
+## Estructura
 
- Nivel 1 
+```
+├── index.html         # Tienda principal con catálogo y modal del carrito
+├── checkout.html      # Formulario de datos y confirmación de compra
+├── js/
+│   ├── shop.js        # Lógica del carrito: comprar, calcular, descuentos
+│   └── checkout.js    # Validación del formulario con regex
+├── css/
+│   └── styles.css     # Bootstrap 5.3.3 con tema personalizado
+└── images/            # Fotografías de los productos
+```
 
- Ejercicio 1
+## Cómo usar
 
- La función buy(id) busca un producto con un id específico. Si lo encuentra, verifica si ya está en el carrito. Si es así,
- aumenta su cantidad. Si no, lo agrega al carrito con una cantidad de 1.
+1. Abre `index.html` en el navegador
+2. Añade productos al carrito con "Add to cart"
+3. Haz clic en "Cart" en la barra de navegación para ver el resumen
+4. Añade 3+ unidades de Cooking Oil o 10+ de Cupcake Mixture para activar el descuento
+5. Haz clic en "Checkout" y completa el formulario
 
- Ejercicio 2
+## Tecnologías
 
- La función cleanCart() vacía el carrito. Pregunta al usuario si está seguro de que desea vaciar el carrito.
- Si el usuario confirma, el carrito se vacía.
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript_ES6+-F7DF1E?style=flat&logo=javascript&logoColor=black)
+![Bootstrap](https://img.shields.io/badge/Bootstrap_5.3-7952B3?style=flat&logo=bootstrap&logoColor=white)
 
- Ejercicio 3
+## Qué demuestra este proyecto
 
- La función calculateTotal() suma los subtotales de todos los productos en el carrito para obtener el precio total. 
- Recorre cada producto en el carrito, aplica a los productos que están en oferta un descuento que resta al precio total y luego devuelve ese total.
+- Manipulación del **DOM**: creación dinámica de filas en tabla, actualización de contadores
+- **Lógica de negocio**: carrito con cantidades, descuentos condicionales por volumen, cálculo de totales
+- **Validación de formularios**: regex para nombre, email, contraseña, dirección y teléfono
+- **Bootstrap 5**: navbar fija, modal, cards con hover, badges, grid responsivo
 
- Ejercicio 4
+## Autor
 
- La función applyPromotionsCart() aplica promociones a cada producto en el array "cart".
- Recorre cada producto en el carrito y calcula el precio total del producto. Si el producto tiene una oferta,
- verifica si la cantidad de productos es mayor o igual al número de productos requeridos para la oferta. Si es así,
- calcula el precio total del producto con descuento y lo guarda en el campo "subtotalWithDiscount" del producto.
- Si no, guarda el precio total del producto en el campo "subtotalWithDiscount" del producto.
-
- Ejercicio 5
-
- la función printCart() llena el modal del carrito de compras manipulando el dom del carrito de compras.
- Recorre cada producto en el carrito y agrega su nombre, precio, cantidad y subtotal con descuento al modal del carrito.
- Luego, calcula el precio total del carrito y lo muestra en el modal del carrito.
- Finalmente, muestra la cantidad de productos en el carrito.
-
- Ejercicio 6
-
- Función de validación de formulario.
-
- La función validate() se encarga de validar los campos del formulario de registro.
-
- Entonces primero se obtienen los valores de los campos del formulario como nombre, apellido, e-mail, etc..
-
- Luego, verifica cada campo con ciertas reglas. Por ejemplo, el nombre y el apellido deben tener al menos 3 caracteres y solo
- pueden contener letras. 
- El email debe ser un email válido. 
- La contraseña debe tener entre 4 y 8 caracteres y contener al  menos una letra y un número. 
- La dirección debe tener al menos 3 caracteres y puede contener letras, números y ciertos  caracteres especiales (@). 
- El teléfono debe tener exactamente 9 dígitos.
- Si todos los campos son válidos, el formulario puede enviarse. Si no, se detendrá el envío del formulario.
- Variable para contar errores.
- Obtener el valor del campo de datos y asignamos a variables. 
- Obtener el valor de error y asignamos a variables.
- Quitamos lo signos de espacio en blanco de los valores de los campos, el valor resultante se asigna a una nueva variable.
- Expresiones regulares para validar los campos y asignarlos a variables.
- Expresión regular para validar solo letras.
- Expresión regular para validar un email.
- Expresión regular para validar una contraseña. Solo acepta letras y num.
- Expresión regular para validar una dirección.
- Expresión regular para validar un número.
- El resto del código valida los campos del formulario con las expresiones regulares y  muestra los mensajes de error. 
- Si es necesario, verifica que se cumplan las condiciones de  validación y, si cualquiera de ellas no se cumple, evita el envío.
-
-
- Nivel 2
-
- Ejercicio 7
- La función removeFromCart(id) elimina un producto del carrito. Busca el producto con el id especificado en el carrito.
- Si lo encuentra, lo elimina del carrito.
- Si la cantidad de productos es mayor a 1, disminuye la cantidad en 1. Si la cantidad es 1, elimina el producto del carrito.
- Si el usuario elimina un producto del carrito, actualiza la cantidad de productos en el carrito.
- función para abrir el modal. Abre el modal y muestra el contenido del carrito de compras con los precios y descuentos.
-
-
- Nivel 3 
-
- Ejercicio 8
-
- Dotar al proyecto de una apariencia más profecional mediante estilos de CSS.
-
-body {
-    background-color: #f5f5dc; 
-    color: #333; 
-}
-
-
-.btn {
-    background-color: #ffd700; 
-    color: #333; 
-    border-radius: 20px; 
-    transition: all 0.3s ease;
-}
-
-
-.btn:hover {
-    background-color: #eec900; 
-}
-
-Nota: Al momento de la entrega experimenté problemas de Bootstrap en un paquete de js.delivery que no puede resolver aún.
+**Gustavo Mujica** — [GitHub](https://github.com/GusFDLPBarcelona)
