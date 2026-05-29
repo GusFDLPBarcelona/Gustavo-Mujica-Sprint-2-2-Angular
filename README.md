@@ -2,6 +2,10 @@
 
 Demo funcional de una tienda online con carrito de compra, sistema de descuentos por volumen y formulario de checkout con validación completa.
 
+## Demo
+
+[Ver demo en vivo](https://gusfdlpbarcelona.github.io/Gustavo-Mujica-Sprint-2-2-Angular/)
+
 ## Funcionalidades
 
 | # | Función | Descripción |
